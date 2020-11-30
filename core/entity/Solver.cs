@@ -28,6 +28,11 @@ namespace TouristAssistSistem.core.entity
             return hotels;
         }
 
+        public Hotel getHotel( int hotelId)
+        {
+            return hotels.Find((a)=> { return a.id == hotelId; });
+        }
+
         public List<Room> getRooms(int hotelId) {
             return rooms.FindAll((a) => { return a.hotelId == hotelId; });
         }

@@ -11,6 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TouristAssistSistem.core.entity;
+using TouristAssistSistem.core.uigate;
+using TouristAssistSistem.data;
 
 namespace TouristAssistSistem
 {
@@ -19,9 +22,23 @@ namespace TouristAssistSistem
     /// </summary>
     public partial class MainWindow : Window
     {
+        IUIInteractor interactor;
+
         public MainWindow()
         {
             InitializeComponent();
+            //DataInteractorPlaceholder нужно заменить на настоящий, когда Аскер его реализует
+            interactor = new UIInteractor(new DataInteractorPlaceholder());
+
+            // Решение, содержит комнату в которой польщователь остановится и список маршрутов по одному на каждый день его прибывания
+            Solution sol = interactor.findRoomAndRoutes(10000, 5);
+            //комната пользователя
+            Room room = sol.room;
+            // Отель в которо находится комната
+            Hotel hotel = interactor.getHotel(room.hotelId);
+
+            //список маршрутов, по одному на каждый день его прибывания
+            List <Route> routes = sol.routes;
         }
     }
 }

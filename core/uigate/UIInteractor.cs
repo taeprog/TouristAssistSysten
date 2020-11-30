@@ -21,6 +21,11 @@ namespace TouristAssistSistem.core.uigate
             return solver.findSolution(money, days);
         }
 
+        public Hotel getHotel(int hotelId)
+        {
+            return solver.getHotels(hotelId);
+        }
+
         public List<Hotel> getHotels()
         {
             return solver.getHotels();

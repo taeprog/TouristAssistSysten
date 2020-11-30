@@ -9,6 +9,7 @@ namespace TouristAssistSistem.core.uigate
 
     public interface IUIInteractor {
         List<Hotel> getHotels();
+        Hotel getHotel(int hotelId);
         List<Room> getRooms(int hotelId);
         List<Route> getRoutes();
         Solution findRoomAndRoutes(int money, int days);  
