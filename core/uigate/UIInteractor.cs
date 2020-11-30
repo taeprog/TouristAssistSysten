@@ -23,7 +23,7 @@ namespace TouristAssistSistem.core.uigate
 
         public Hotel getHotel(int hotelId)
         {
-            return solver.getHotels(hotelId);
+            return solver.getHotel(hotelId);
         }
 
         public List<Hotel> getHotels()

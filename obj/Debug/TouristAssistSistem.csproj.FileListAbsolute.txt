@@ -1,0 +1,14 @@
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.csprojAssemblyReference.cache
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\MainWindow.g.cs
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\App.g.cs
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem_MarkupCompile.cache
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem_MarkupCompile.lref
+C:\Users\taepr\source\repos\TouristAssistSistem\bin\Debug\TouristAssistSistem.exe
+C:\Users\taepr\source\repos\TouristAssistSistem\bin\Debug\TouristAssistSistem.pdb
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\MainWindow.baml
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.g.resources
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.Properties.Resources.resources
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.csproj.GenerateResource.cache
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.csproj.CoreCompileInputs.cache
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.exe
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\TouristAssistSistem.pdb
