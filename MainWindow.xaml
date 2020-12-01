@@ -1,12 +1,102 @@
 ﻿<Window x:Class="TouristAssistSistem.MainWindow"
+        UseLayoutRounding="True"
+
+        MouseLeftButtonDown="windowMovingEvent"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TouristAssistSistem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Window1" Height="525" Width="729.5" Background="#FFD3F3FF" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None">
+    <Window.Effect>
+        <DropShadowEffect Direction="348" ShadowDepth="0" BlurRadius="74" Opacity="0.925"/>
+    </Window.Effect>
+
     <Grid>
+            <StackPanel HorizontalAlignment="Right" Orientation="Vertical">
+
+                <Button Click="exitProgramEvent" FontSize="13"  Margin="0 10 10 0" Height="30" materialDesign:RippleAssist.Feedback="#FFECECEC" Style="{StaticResource MaterialDesignOutlinedButton}" Content="{materialDesign:PackIcon Kind=Shutdown}"  Foreground="#FF979797" Background="Transparent"/>
+                
+
+
+
+            </StackPanel>
         
+        <Border Padding="15" VerticalAlignment="Center" Margin="0 30 0 0" MaxWidth="500" CornerRadius="5" MaxHeight="400" Background="White" >
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="23" Color="#FFBFE5F3" Direction="100" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+
+                <TextBlock  Grid.ColumnSpan="3" x:Name="label" VerticalAlignment="Center"  FontSize="20" Margin="0,18,0,17" FontWeight="Bold" >Хотите запланировать отдых?</TextBlock>
+                <Grid Margin="18 0 18 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="cashUI" Margin="0 0 18 0"  materialDesign:TextFieldAssist.UnderlineBrush="Black" materialDesign:TextFieldAssist.SuffixText="RUB " materialDesign:HintAssist.Hint="Введите сумму"  Grid.Column="0"   VerticalAlignment="Center"  Height="25" CaretBrush="#FFA4A4A4"></TextBox>
+                    <TextBox x:Name="daysUI" materialDesign:TextFieldAssist.UnderlineBrush="Black" Margin="18 0 0 0" materialDesign:HintAssist.Hint="Введите кол-во дней" Grid.Column="1"    VerticalAlignment="Center"  Height="25" CaretBrush="#FFA4A4A4"></TextBox>
+
+                </Grid>
+
+
+                <Button Click="showSolutionsPage" Margin="18 15 0 0" Width="200" HorizontalAlignment="Left"  materialDesign:RippleAssist.Feedback="#FFFFDCA9" Style="{StaticResource MaterialDesignFlatLightBgButton}" Content="Запланировать" Foreground="#FF815411" Background="#FFFFB74D" BorderBrush="#FFFBFBFB"/>
+                <TextBlock  Grid.ColumnSpan="3" VerticalAlignment="Center"  FontSize="20" Margin="0,18,0,17" FontWeight="Bold" >Еще</TextBlock>
+
+
+                <UniformGrid Rows="1" Columns="2">
+                    <Border Padding="15"  MaxWidth="200" CornerRadius="5" MaxHeight="400" Background="White">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="25" Color="#FFEAE6E6" Direction="100" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <TextBlock  Margin="0 0 0 15" MaxHeight="50" > Список всех доступных <LineBreak></LineBreak> отелей</TextBlock>
+
+
+
+                            <materialDesign:Badged
+                              
+                        Badge="{materialDesign:PackIcon Hotel}"
+                                BadgePlacementMode="TopRight"
+                        BadgeColorZoneMode="Accent">
+
+                                <Button Click="showHotelsPage" materialDesign:RippleAssist.Feedback="#FFECECEC" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Открыть отели" Foreground="#FF979797"/>
+                            </materialDesign:Badged>
+
+
+                        </StackPanel>
+                    </Border>
+                    <Border Padding="15" MaxWidth="200" CornerRadius="5" MaxHeight="400" Background="White">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="25" Color="#FFEAE6E6" Direction="100" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <TextBlock Margin="0 0 0 15" MaxHeight="50" > Список всех доступных <LineBreak></LineBreak> маршрутов</TextBlock>
+                            <materialDesign:Badged
+                        Badge="{materialDesign:PackIcon Routes}"
+                        BadgeColorZoneMode="Accent">
+
+                                <Button Click="showRoutesPage" materialDesign:RippleAssist.Feedback="#FFECECEC" Style="{StaticResource MaterialDesignOutlinedButton}" Content="Список маршрутов" Foreground="#FF979797" Background="Transparent"/>
+                            </materialDesign:Badged>
+                        </StackPanel>
+                    </Border>
+
+                </UniformGrid>
+
+
+
+
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

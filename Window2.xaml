@@ -1,0 +1,52 @@
+﻿<Window x:Class="TouristAssistSistem.Window2"
+
+        UseLayoutRounding="True"
+        MouseLeftButtonDown="windowMovingEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TouristAssistSistem"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Window1" Height="525" Width="729.5" Background="#FFD3F3FF" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None">
+    <Grid >
+        <materialDesign:PackIcon
+                            Kind="{Binding Kind}"
+            
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="100"
+                            Height="100"/>
+        <Button Click="exitProgramEvent" VerticalAlignment="Top" materialDesign:RippleAssist.Feedback="#FFC3EFFF" HorizontalAlignment="Right" Background="#00000000" BorderBrush="#00000000" FontSize="24" Foreground="#FF4C7D8F">x</Button>
+
+        <Border Padding="15" Margin="0 10 0 10" MaxWidth="500" CornerRadius="5" MaxHeight="400" Background="White" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="25" Color="#FFBFE5F3" Direction="100" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+
+                <TextBlock  Grid.ColumnSpan="3" x:Name="label" VerticalAlignment="Center"  FontSize="20" Margin="0,18,0,17" FontWeight="Bold" >Список отелей</TextBlock>
+                <ListBox IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
+                    <TextBlock Text="Plain"/>
+                    <TextBlock Text="Old"/>
+                    <TextBlock Text="ListBox"/>
+                    <TextBlock Text="Full of junk"/>
+                </ListBox>
+
+
+
+
+
+
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
