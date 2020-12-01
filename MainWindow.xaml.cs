@@ -30,7 +30,7 @@ namespace TouristAssistSistem
             InitializeComponent();
 
             //DataInteractorPlaceholder нужно заменить на настоящий, когда Аскер его реализует
-            interactor = new UIInteractor(new DataInteractorPlaceholder());
+            interactor = new UIInteractor(new DataInteractor());
 
             // Решение, содержит комнату в которой польщователь остановится и список маршрутов по одному на каждый день его прибывания
             Solution sol = interactor.findRoomAndRoutes(10000, 5);

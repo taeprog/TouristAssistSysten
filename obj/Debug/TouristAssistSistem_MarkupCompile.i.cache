@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\artistotless\TouristAssistSysten\obj\Debug\
+C:\Users\taepr\source\repos\TouristAssistSistem\obj\Debug\
 TouristAssistSistem
 none
 false
 DEBUG;TRACE
-C:\Users\artistotless\TouristAssistSysten\App.xaml
+C:\Users\taepr\source\repos\TouristAssistSistem\App.xaml
 7-22425569
 
-25-1580115581
-14-136750415
+23-1191037091
+14-1097372406
 HotelsPage.xaml;MainWindow.xaml;RoutesPage.xaml;SolutionsPage.xaml;uiElements\hotelPlaceholder.xaml;uiElements\routePlaceholder.xaml;uiElements\solutionRoutePlaceholder.xaml;
 
-True
+False
 

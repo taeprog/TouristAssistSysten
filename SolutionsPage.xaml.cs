@@ -35,7 +35,7 @@ namespace TouristAssistSistem
         public void AddSolutionToPanel(Solution sol)
         {
             nameRommUI.Text =  "Цена: " + sol.room.price.ToString() + " RUB";
-            descrRoomUI.Text = string.Format("ID: {0} | Удобства: {1}", sol.room.id, sol.room.conviniences);
+            descrRoomUI.Text = string.Format("ID: {0} | Удобства: {1}", sol.room.id+1, sol.room.conviniences);
 
             foreach (Route item in sol.routes)
                 StackPanelRoutes.Children.Add(new solutionRoutePlaceholder(item));

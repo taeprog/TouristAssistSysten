@@ -19,18 +19,7 @@ namespace TouristAssistSistem.core.entity
 
         public Solution findSolution(int money, int days) 
         {
-            Queue<Route> hard = new Queue<Route>();
-            Queue<Route> medium = new Queue<Route>();
-            Queue<Route> light = new Queue<Route>();
-
             List<Route> result = new List<Route>();
-
-            routes.ForEach((a) =>
-            {
-                if (a.difficulty == 3) hard.Enqueue(a);
-                else if (a.difficulty == 2) medium.Enqueue(a);
-                else light.Enqueue(a);
-            });
 
             float minRoomPrice = (rooms[0].price)*(days-1);
             float actionMoney = money - minRoomPrice;
