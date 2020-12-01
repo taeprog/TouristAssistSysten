@@ -23,10 +23,12 @@ namespace TouristAssistSistem
     public partial class MainWindow : Window
     {
         IUIInteractor interactor;
+        public Frame pageFrame;
 
         public MainWindow()
         {
             InitializeComponent();
+
             //DataInteractorPlaceholder нужно заменить на настоящий, когда Аскер его реализует
             interactor = new UIInteractor(new DataInteractorPlaceholder());
 
@@ -37,8 +39,52 @@ namespace TouristAssistSistem
             // Отель в которо находится комната
             Hotel hotel = interactor.getHotel(room.hotelId);
 
+
+
             //список маршрутов, по одному на каждый день его прибывания
-            List <Route> routes = sol.routes;
+            List<Route> routes = sol.routes;
+
+        }
+        private void windowMovingEvent(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void exitProgramEvent(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void showHotelsPage(object sender, RoutedEventArgs e)
+        {
+            var hotelsPage = new HotelsPage(this);
+            foreach (Hotel item in interactor.getHotels())
+            {
+                hotelsPage.AddHotelToPanel(item, interactor.getRooms(item.id));
+            }
+            hotelsPage.Show();
+        }
+
+        private void showRoutesPage(object sender, RoutedEventArgs e)
+        {
+            var routesPage = new RoutesPage(this);
+            routesPage.AddRouteToPanel(interactor.getRoutes());
+            routesPage.Show();
+        }
+
+        private void showSolutionsPage(object sender, RoutedEventArgs e)
+        {
+            if (daysUI.Text != string.Empty && cashUI.Text != string.Empty)
+            {
+                var solutionsPage = new SolutionsPage(this);
+                var solutions = interactor.findRoomAndRoutes(Convert.ToInt32(cashUI.Text), Convert.ToInt32(daysUI.Text));
+                solutionsPage.AddSolutionToPanel(solutions);
+                solutionsPage.Show();
+                   }
+            else
+            {
+                MessageBox.Show("Введите ваш бюджет и кол-во дней!", "Внимание");
+            }
         }
     }
 }
